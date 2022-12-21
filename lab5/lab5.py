@@ -16,7 +16,7 @@ creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
 creator.create("Individual", list, fitness=creator.FitnessMin)
 
 toolbox = base.Toolbox()
-toolbox.register("evaluate", benchmarks.rastrigin)
+toolbox.register("evaluate", benchmarks.rosenbrock)
 np.random.seed(128)
   
 strategy = cma.Strategy(centroid=[10.0]*N, sigma=10.0, lambda_=20*N)
